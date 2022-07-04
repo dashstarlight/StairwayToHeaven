@@ -11,6 +11,8 @@ public class PlayerStatsStorage : MonoBehaviour {
 	public int manaUsedOld = 0;
 	public int stagesCleared = 0;
 	public int retries = 0;
+	public int maxMana = 256;
+
 	public float playtime = 0f;
 	public bool timerRunning;
 
@@ -44,5 +46,6 @@ public class PlayerStatsStorage : MonoBehaviour {
 
 	void Update() {
 		if (timerRunning) playtime += Time.deltaTime;
+		if (mana > maxMana) mana = maxMana;
 	}
 }

@@ -109,8 +109,8 @@ public class Boss : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "PlayerBullet" && player != null) {
 			hitpoints--;
+			playerStats.mana++;
 
-			if (playerStats.mana < 256) playerStats.mana++;
 			if (hitpoints < 0) hitpoints = 0;
 		}
 	}
